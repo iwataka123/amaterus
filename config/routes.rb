@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :articles
 
   # get 'rooms/show' => 'rooms#show'
-  # get 'checks/:id', to: 'checks#check', as: 'check'
+  get 'checks/:id', to: 'checks#check', as: 'check'
 end
