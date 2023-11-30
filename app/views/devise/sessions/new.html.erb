@@ -1,0 +1,30 @@
+<%= form_with model: @user, url: user_session_path, class: 'session-main', local: true do |f| %>
+<div class='session-form-wrap'>
+  <div class='session-form-header'>
+    <h1 class='session-form-header-text'>
+      職員情報入力
+    </h1>
+  </div>
+  <div class='login-flash-message'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
+  <div class="session-form-group">
+    <div class='session-form-text-wrap'>
+      <label class="session-form-text">職員ＩＤ</label>
+      <span class="session-indispensable">必須</span>
+    </div>
+    <%= f.text_field :unique_user_id, class:"session-input-default", id:"unique_user_id", placeholder:"例：000001", autofocus: true %>
+  </div>
+  <div class="session-form-group">
+    <div class='session-form-text-wrap'>
+      <label class="session-form-text">パスワード</label>
+      <span class="session-indispensable">必須</span>
+    </div>
+    <%= f.password_field :password, class:"session-input-default", id:"password", placeholder:"" %>
+  </div>
+  <div class='login-btn'>
+    <%= f.submit "ログイン" ,class:"login-red-btn" %>
+  </div>
+</div>
+<% end %>

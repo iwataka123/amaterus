@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
+.top-page-header {
+  width: 100vw;
+  padding: 2vh 5vw;
+  display: flex;
+  flex-direction: column;
+  background-image: url('header_back.png');
+  background-size: cover;
+}
+
+.company-name{
+  font-size: 45px;
+  font-weight: bolder;
+}
+
+.top-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-icon {
+  width: 5vw;
+  margin-right: 15px;
+}
+
+.nav {
+  font-size: 18px;
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
+  /* width: 100%; */
+  padding: 1vh 0;
+}
+
+.lists-right {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+
+.user-info {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+}
+
+
+.logout {
+  border-radius: 5px;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(163, 93, 230);
+}
+
+.login {
+  
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.sign-up {
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 1vw;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(150, 150, 148);
+}

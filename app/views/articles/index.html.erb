@@ -1,0 +1,46 @@
+<%= render "shared/header" %>
+
+<div class="main-contents">
+  <div class="articles">
+    <h1 class='article-header-text'>
+      ～お知らせ一覧～
+    </h1>
+    <% @articles.each do |article| %>
+      <div class="article" id=<%= article.id%>>
+        <div class="article-overview">
+          <%= link_to check_path(article) do %>
+            <p class="article-title">
+              <%= article.title%>
+            </p>
+            <p class="article-content">
+              <%= article.content%>
+            </p>
+          <% end %>
+          <div class="article-information">
+            <p class="article-post-date">
+              <%= article.created_at.strftime("%Y年 %m月 %d日") %>
+            </p>
+            <p class="article-about-time">
+              投稿者：<%= article.poster %>
+            </p>
+            <div class="article-check">
+              <% if Check.where(user_id: current_user.id, article_id: article.id).exists? %>
+                <div class="article-check-button" data=<%= article.id %>>
+                  既読
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <%= image_tag article.image.variant(resize_to_fill: [400, 400]), class: "article-image" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to(new_article_path, class: 'write-btn') do %>
+  <span class='write-btn-text'>投稿する</span>
+  <%= image_tag 'icon_pen.png' , size: '185x50' ,class: "write-btn-icon" %>
+<% end %>
+
+<%= render "shared/footer" %>
