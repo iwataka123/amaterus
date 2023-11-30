@@ -13,4 +13,3 @@ class ChecksController < ApplicationController
     @article = Article.find(params[:id])
   end
 end
-end
