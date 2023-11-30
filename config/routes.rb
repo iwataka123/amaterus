@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   root to: 'articles#index'
   resources :articles
 
-  # get 'rooms/show' => 'rooms#show'
+  get 'rooms/show' => 'rooms#show'
   get 'checks/:id', to: 'checks#check', as: 'check'
 end
