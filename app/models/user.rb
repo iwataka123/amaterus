@@ -19,6 +19,10 @@ class User < ApplicationRecord
     validates :position_id
   end
 
+  has_many :room_users
+  has_many :rooms, through: :room_users
+  has_many :messages
+  
   #unique_user_idを利用してログインするようにオーバーライド
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup

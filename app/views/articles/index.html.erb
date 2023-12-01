@@ -38,6 +38,10 @@
   </div>
 </div>
 
+<%= link_to(rooms_path, class: 'chat-btn') do %>
+  <span class='write-btn-text'>チャット</span>
+  <%= image_tag 'icon_chat.png' , size: '185x50' ,class: "write-btn-icon" %>
+<% end %>
 <%= link_to(new_article_path, class: 'write-btn') do %>
   <span class='write-btn-text'>投稿する</span>
   <%= image_tag 'icon_pen.png' , size: '185x50' ,class: "write-btn-icon" %>
