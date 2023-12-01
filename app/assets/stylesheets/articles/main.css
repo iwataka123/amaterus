@@ -38,9 +38,10 @@ a{
 .article{
   height: 250px;
   width: 100%;
-  background: #EEEEEE;
+  background-image: url(article_back.jpg);
   padding: 20px;
   margin-bottom: 10px;
+  border-radius: 10px;
   display: flex;
   justify-content:space-between; 
 }
@@ -59,12 +60,12 @@ a{
 }
 
 .article-title{
-  height: 20%;
+  height: 30%;
   width: 100%;
   padding: 5px;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
-  border-bottom: solid 2px #040880;
+  border-bottom: solid 2px #7e6000;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -73,6 +74,7 @@ a{
 .article-content{
   height: 70%;
   width: 100%;
+  font-size: 20px;
   padding: 5px;
   overflow: hidden;
   display: -webkit-box;
@@ -89,16 +91,16 @@ a{
 .article-post-date{
   width: 40%;
   padding: 5px;
-  font-size: 13px;
+  font-size: 15px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
-.article-about-time{
+.article-poster{
   width: 35%;
   padding: 5px;
-  font-size: 13px;
+  font-size: 15px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -111,11 +113,11 @@ a{
 .article-check-button{
   height: 100%;
   width: 100%;
-  padding: 5px;
-  background: #1b69df;
+  border: #db3b1e solid 3px;
   text-align: center;
-  font-size: 13px;
-  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  color: #db3b1e;
   border-radius: 30px;
   overflow: hidden;
   white-space: nowrap;
@@ -124,4 +126,5 @@ a{
 
 .article-image{
   width: 35%;
+  border-radius: 10px;
 }

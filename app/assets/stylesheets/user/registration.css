@@ -4,7 +4,7 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  background-image: url('registration_back.jpg');
+  background-image: url(registration_back.jpg);
   background-size: cover;
 }
 

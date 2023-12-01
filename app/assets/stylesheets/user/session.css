@@ -4,7 +4,7 @@
   height: 100%;
   display: flex;
   justify-content: left;
-  background-image: url('login_back.jpg');
+  background-image: url(login_back.jpg);
   background-size: cover;
 }
 
