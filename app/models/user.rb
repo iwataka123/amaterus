@@ -10,7 +10,7 @@ class User < ApplicationRecord
   belongs_to :position
 
   with_options presence: true do
-    validates :unique_user_id
+    validates :unique_user_id, uniqueness:true, format: { with: /\A\d{6}\z/, message: "は6桁の数字で入力してください" }
     validates :name
   end
 
