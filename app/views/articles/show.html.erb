@@ -6,7 +6,11 @@
   <p class="show-article-post-date">
     <%= @article.created_at.strftime("%Y年 %m月 %d日") %>
   </p>
-  <%= image_tag @article.image.variant(resize: '500x500'), class: "show-article-image" %>
+  <% if @article.image.attached? %>
+    <%= image_tag @article.image.variant(resize: '500x500'), class: "show-article-image" %>
+  <% else %>
+    <%= image_tag 'noimage.png', class: "show-article-image", alt: "No image available" %>
+  <% end %>
   <p class="show-article-content">
     <%= @article.content %>
   </p>

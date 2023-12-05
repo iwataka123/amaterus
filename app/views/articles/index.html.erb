@@ -32,7 +32,11 @@
             </div>
           </div>
         </div>
-        <%= image_tag article.image.variant(resize_to_fill: [400, 400]), class: "article-image" %>
+        <% if article.image.attached? %>
+          <%= image_tag article.image.variant(resize_to_fill: [400, 400]), class: "article-image" %>
+        <% else %>
+          <%= image_tag 'noimage.png', class: "article-image", alt: "No image available" %>
+        <% end %>
       </div>
     <% end %>
   </div>
