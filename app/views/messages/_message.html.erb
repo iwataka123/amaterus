@@ -14,5 +14,15 @@
       <!-- 投稿したメッセージ内容を記述する -->
       <%= message.content %>
     </div>
+      <!-- 投稿したファイルを画像か画像以外で処理を振り分ける -->
+    <% if message.attached_file.attached? %>
+      <% if message.attached_file.image? %>
+        <%= image_tag message.attached_file.variant(resize: '300x150'), class: 'message-image' %>
+          <% elsif message.attached_file.attached? %>
+            <%= link_to rails_blob_path(message.attached_file, disposition: 'attachment'), class: 'message-file' do %>
+            <%= image_tag "doc.jpeg", alt: "Download file", width: '150', height: '150'%>
+          <% end %>
+      <% end %>
+    <% end %>
   </div>
 </div>

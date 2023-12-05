@@ -95,12 +95,13 @@
 
 .message {
   width: 400px;
+  margin-bottom: 20px;
   background-color: white;
 }
 
 .my-message {
   width: 400px;
-  margin: 10px 0 0 auto;
+  margin: 0 0 20px auto;
   background-color: aquamarine;
 }
 
