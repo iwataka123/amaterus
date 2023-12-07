@@ -1,4 +1,4 @@
-.shedule-wrapper {
+.schedule-wrapper {
   width: 400px;
   height: 100%;
   background-image: url(schedule_back.jpg);
@@ -14,7 +14,7 @@
 .bottom-content {
   padding: 10px;
   width: 350px;
-  height: 250px;
+  height: 220px;
   margin: 0 auto;
   background-color: rgba(252, 246, 146, 0.658);
   border-radius: 10px;
@@ -70,4 +70,51 @@
 .schedule-button a {
   font-weight: bolder;
   font-size: 20px;
+}
+.calendar-heading {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.calendar-heading a {
+  color: rgb(0, 0, 255);
+  text-decoration: underline;
+}
+
+.calendar-title {
+  font-size: 20px;
+  padding: 0 20px;
+}
+.schedule {
+  font-size: 7px;
+  color: rgb(0, 0, 255);
+  text-decoration: underline;
+}
+
+.calendar-heading {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-title {
+  padding: 0 20px;
+}
+
+.simple-calendar {
+  width: 400px;
+padding: 0 20px;
+margin-top: 20px;
+}
+
+.wday-0 {
+  background: #ffeaea;
+  color: #ff505c;
+}
+
+.wday-6 {
+  background: #d4ebff;
+  color: #5984dc;
 }
