@@ -22,6 +22,7 @@ class User < ApplicationRecord
   has_many :room_users
   has_many :rooms, through: :room_users
   has_many :messages
+  has_many :schedules
   
   #unique_user_idを利用してログインするようにオーバーライド
   def self.find_first_by_auth_conditions(warden_conditions)

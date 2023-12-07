@@ -14,6 +14,8 @@ module Amaterus
     config.time_zone = 'Tokyo'
     config.active_storage.variant_processor = :mini_magick
 
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

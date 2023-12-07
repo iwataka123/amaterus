@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_05_024951) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_06_064540) do
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -83,6 +83,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_05_024951) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "schedules", charset: "utf8mb4", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "content"
+    t.datetime "start_time", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_schedules_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "unique_user_id", null: false
     t.string "encrypted_password", default: "", null: false
@@ -107,4 +117,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_05_024951) do
   add_foreign_key "messages", "users"
   add_foreign_key "room_users", "rooms"
   add_foreign_key "room_users", "users"
+  add_foreign_key "schedules", "users"
 end

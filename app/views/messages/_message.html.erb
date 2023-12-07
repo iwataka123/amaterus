@@ -19,8 +19,8 @@
       <% if message.attached_file.image? %>
         <%= image_tag message.attached_file.variant(resize: '300x150'), class: 'message-image' %>
           <% elsif message.attached_file.attached? %>
-            <%= link_to rails_blob_path(message.attached_file, disposition: 'attachment'), class: 'message-file' do %>
-            <%= image_tag "doc.jpeg", alt: "Download file", width: '150', height: '150'%>
+            <%= link_to rails_blob_path(message.attached_file, disposition: 'attachment') do %>
+            <%= image_tag "doc.jpeg", alt: "Download file", width: '150', height: '150', class: 'message-image'%>
           <% end %>
       <% end %>
     <% end %>
