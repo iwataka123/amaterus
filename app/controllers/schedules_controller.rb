@@ -3,7 +3,9 @@ class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
 
   def index
-    @schedule = Schedule.includes(:user)
+    @schedule = current_user.schedules.includes(:user)
+    @todaySchedule = current_user.schedules.where("DATE(start_time) = ?", Date.today)
+  Rails.logger.debug(@todaySchedule.inspect) # ログに @todaySchedule を出力
   end
   
   def new
@@ -14,7 +16,12 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    Schedule.create(schedule_params)
+    @schedule = Schedule.new(schedule_params)
+    if @schedule.save
+      redirect_to root_path
+    else
+    render :new
+    end
   end
 
   def destroy

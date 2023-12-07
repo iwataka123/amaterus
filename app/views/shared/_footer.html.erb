@@ -2,3 +2,23 @@
   <%= link_to image_tag("amaterus.logo.png", class:"amaterus-logo"), "#" %>
   <p>powerd by ©amaterus</p>
 </div>
+<div id="floatingMenu" class="notshow">
+<!-- MENU1 -->
+  <div class="flObj top">
+    <p>チャット</p>
+    <%= link_to(rooms_path) do %>
+    <%= image_tag 'icon_chat.png', size: '40x40', class: "float_icon" %>
+    <% end %>
+  </div>
+<!-- MENU2 -->
+  <div class="flObj middle">
+    <p>投稿する</p>
+    <%= link_to(new_article_path) do %>
+    <%= image_tag 'icon_pen.png' , size: '40x40', class: "float_icon" %>
+    <% end %>
+  </div>
+  <!-- ＋のボタン -->
+  <div id="flObgToggle" class="flObj bottom">
+  <a><img src="plus_icon.png" width="40" height="40"></a>
+  </div>
+</div>

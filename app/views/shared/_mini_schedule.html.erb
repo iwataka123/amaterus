@@ -1,0 +1,46 @@
+<div class="shedule-wrapper">
+  <div class="calendar">
+    <%= week_calendar(events: @schedules) do |date, schedules| %>
+      <%= date.day %>
+      <% schedules.each do |schedule| %>
+        <div class="schedule">
+          <%= link_to schedule.title, schedule %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="schedule-contents">
+    <div class="top-content">
+      <div class="schedule-button">
+        <%= link_to "予定の作成", new_schedule_path %>
+      </div>
+    </div>
+    <div class="content-title">今日の予定一覧</div>
+    <div class="bottom-content">
+    
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th class="table-name">開始時間</th>
+        <th class="table-name">イベント</th>
+        <th class="table-name">チェック</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @today_schedule.each do |schedule| %>
+        <tr>
+          <td class="today_schedule_time"><%= schedule.start_time.strftime("%H時%m分") %></td>
+          <td class="today_schedule_title"><%= link_to schedule.title , schedule %></td>
+          <td class="today_schedule_check">
+      <%= form_with(model: schedule, local: true) do |form| %>
+        <%= form.check_box :completed %>
+        <% end %>
+    </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,8 @@ class MessagesController < ApplicationController
     @message = Message.new
     @room = Room.find(params[:room_id])
     @messages = @room.messages.includes(:user)
+    @schedules = current_user.schedules.includes(:user)
+    @today_schedule = current_user.schedules.where("DATE(start_time) = ?", Date.today)
   end
 
   def create

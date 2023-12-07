@@ -1,7 +1,6 @@
 .simple-calendar {
   width: 400px;
 padding: 0 20px;
-margin-top: 20px;
   .day {
   }
 
@@ -36,8 +35,20 @@ margin-top: 20px;
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
+  align-items: baseline;
+}
+
+.calendar-heading a {
+  color: blue;
+  text-decoration: underline;
 }
 
 .calendar-title {
+  font-size: 20px;
   padding: 0 20px;
+}
+.schedule {
+  font-size: 7px;
+  color: blue;
+  text-decoration: underline;
 }

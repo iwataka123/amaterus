@@ -1,5 +1,7 @@
 class RoomsController < ApplicationController
   def index
+    @schedules = current_user.schedules.includes(:user)
+    @today_schedule = current_user.schedules.where("DATE(start_time) = ?", Date.today)
   end
   
   def new

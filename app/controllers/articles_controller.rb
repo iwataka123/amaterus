@@ -5,10 +5,11 @@ class ArticlesController < ApplicationController
   
   def index
     @articles = Article.all.order("created_at DESC")
+    @schedules = current_user.schedules.includes(:user)
+    @today_schedule = current_user.schedules.where("DATE(start_time) = ?", Date.today)
   end
 
   def show
-    
   end
 
   def new
@@ -51,15 +52,11 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(
-      :title,
-      :poster,
-      :content,
-      :image
-    ).merge(user_id: current_user.id)
+    params.require(:article).permit(:title, :poster, :content, :image).merge(user_id: current_user.id)
   end
 
   def set_article
     @article = Article.find(params[:id])
   end
+
 end
