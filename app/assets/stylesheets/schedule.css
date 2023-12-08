@@ -41,7 +41,6 @@
 .today_schedule_time,
   .today_schedule_title,
     .today_schedule_check {
-    padding: 5px 15px; /* 適切な余白サイズを設定 */
     border-bottom: dashed 1px darkgray;
   }
 
@@ -105,16 +104,16 @@
 
 .simple-calendar {
   width: 400px;
-padding: 0 20px;
-margin-top: 20px;
+  padding: 0 20px;
+  margin-top: 20px;
 }
 
 .wday-0 {
-  background: #ffeaea;
+  background-color: #ffeaea;
   color: #ff505c;
 }
 
 .wday-6 {
-  background: #d4ebff;
+  background-color: #d4ebff;
   color: #5984dc;
 }
