@@ -4,12 +4,14 @@ class SchedulesController < ApplicationController
 
   def index
     @schedule = current_user.schedules.includes(:user)
-    @todaySchedule = current_user.schedules.where("DATE(start_time) = ?", Date.today)
-  Rails.logger.debug(@todaySchedule.inspect) # ログに @todaySchedule を出力
+    @schedules = current_user.schedules.includes(:user)
+    @today_schedule = current_user.schedules.where("DATE(start_time) = ?", Date.today)
   end
   
   def new
     @schedule = Schedule.new
+    @schedules = current_user.schedules.includes(:user)
+    @today_schedule = current_user.schedules.where("DATE(start_time) = ?", Date.today)
   end
 
   def show

@@ -1,7 +1,8 @@
 .post-article-form{
-  margin-top: 40px;
   width: 100%;
-  padding: 30px 100px;
+  height: 70vh;
+  padding: 50px 100px;
+  overflow: scroll;
 }
 
 .post-article-form form{
