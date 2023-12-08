@@ -92,12 +92,6 @@
   text-decoration: underline;
 }
 
-.calendar-heading {
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-}
-
 .calendar-title {
   padding: 0 20px;
 }
