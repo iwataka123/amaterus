@@ -1,0 +1,57 @@
+.edit-p {
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: bolder;
+}
+
+.edit-title,
+ .edit-content,
+  .edit-time {
+    width: 250px;
+    padding: 0 10px;
+    background-color: rgba(137, 43, 226, 0.349);
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.edit-title,
+ .edit-time {
+  height: 50px;
+  line-height: 50px;
+}
+
+.edit-content {
+  height: 200px;
+  padding: 5px 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.schedule-btn {
+  width: 100px;
+  height: 50px;
+  background-color: blue;
+  padding: 10px 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.schedule-d-btn {
+  width: 100px;
+  height: 50px;
+  background-color: red;
+  padding: 10px 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(145, 145, 145);
+}

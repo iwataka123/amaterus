@@ -1,17 +1,14 @@
 class SchedulesController < ApplicationController
 
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
+  before_action :set_schedules
 
   def index
     @schedule = current_user.schedules.includes(:user)
-    @schedules = current_user.schedules.includes(:user)
-    @today_schedule = current_user.schedules.where("DATE(start_time) = ?", Date.today)
   end
   
   def new
     @schedule = Schedule.new
-    @schedules = current_user.schedules.includes(:user)
-    @today_schedule = current_user.schedules.where("DATE(start_time) = ?", Date.today)
   end
 
   def show
@@ -28,10 +25,10 @@ class SchedulesController < ApplicationController
 
   def destroy
     @schedule.destroy
+    redirect_to root_path
   end
 
   def edit
-    @schedule = Schedule.new(schedule_params)
 
     if @schedule.save
     else
@@ -49,6 +46,11 @@ class SchedulesController < ApplicationController
 
   def set_schedule
     @schedule = Schedule.find(params[:id])
+  end
+
+  def set_schedules
+    @schedules = current_user.schedules.includes(:user)
+    @today_schedule = current_user.schedules.where("DATE(start_time) = ?", Date.today)
   end
 
   def schedule_params

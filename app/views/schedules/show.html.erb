@@ -1,0 +1,31 @@
+<%= render "shared/header" %>
+
+<div class="new-schedule-wrapper">
+  <div class="new-post">
+      <p class="edit-p">タイトル</p>
+      <div class="edit-title">
+        <%= @schedule.title %>
+      </div>
+
+      <p class="edit-p">内容</p>
+      <div class="edit-content">
+        <%= @schedule.content %>
+      </div>
+
+      <p class="edit-p">日時</p>
+      <div class="edit-time">
+        <%= @schedule.start_time.strftime("%Y年%m月%d日 %H時%M分") %>
+      </div>
+
+    <div class="buttons">
+      <%= link_to "編集", edit_schedule_path, method: :get, class: "schedule-btn" %>
+      <%= link_to "削除", schedule_path, data: { turbo_method: :delete }, class:"schedule-d-btn" %>
+    </div>
+  </div>
+  
+  <div class="schedules">
+    <%= render "shared/mini_schedule" %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

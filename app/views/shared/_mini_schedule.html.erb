@@ -30,12 +30,12 @@
     <tbody>
       <% @today_schedule.each do |schedule| %>
         <tr>
-          <td class="today_schedule_time"><%= schedule.start_time.strftime("%H時%m分") %></td>
+          <td class="today_schedule_time"><%= schedule.start_time.strftime("%H時%M分") %></td>
           <td class="today_schedule_title"><%= link_to schedule.title , schedule %></td>
           <td class="today_schedule_check">
       <%= form_with(model: schedule, local: true) do |form| %>
         <%= form.check_box :completed %>
-        <% end %>
+      <% end %>
     </td>
         </tr>
       <% end %>

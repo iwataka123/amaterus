@@ -1,0 +1,31 @@
+<%= render "shared/header" %>
+
+<div class="new-schedule-wrapper">
+  <div class="new-post">
+    <%= form_with(model: @schedule, local: true) do |f| %>
+      <div class="title">
+        <p><%= f.label :title, 'タイトル', class:"form-tag" %><span>（必須）</span></p>
+        <%= f.text_field :title %>
+      </div>
+      <div class="content">
+        <p><%= f.label :content, '内容', class:"form-tag" %></p>
+        <%= f.text_field :content, class:"new_schedule_content"%>
+      </div>
+
+        <div class="time">
+        <p><%= f.label :start_time, '日時', class:"form-tag" %><span>（必須）</span></p>
+        <%= f.datetime_field :start_time %>
+      </div>
+
+    <div class="submit">
+        <%= f.submit "変更する", class:"schedule_submit_button"%>
+    </div>
+    <% end %>
+  </div>
+  
+  <div class="schedules">
+    <%= render "shared/mini_schedule" %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
