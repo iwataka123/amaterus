@@ -86,7 +86,7 @@ https://amaterus.onrender.com
 
 # データベース設計
 
-[![Image from Gyazo](https://i.gyazo.com/5ba3e207514b3d14c57a931de148bf1d.png)](https://gyazo.com/5ba3e207514b3d14c57a931de148bf1d)
+[![Image from Gyazo](https://i.gyazo.com/035b62be110e2023f00c0db1b7a34b89.png)](https://gyazo.com/035b62be110e2023f00c0db1b7a34b89)
 
 # テーブル設計
 
@@ -180,7 +180,8 @@ https://amaterus.onrender.com
 | ---------- | ---------- | ------------------------------ |
 | title      | string     | null: false                    |
 | content    | text       |                                |
-| start_time | boolean    |                                |
+| start_time | datetime   | null: false                    |
+| completed  | boolean    | null: false, default: false    |
 | user       | references | null: false, foreign_key: true |
 
 ### Association
