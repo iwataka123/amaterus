@@ -83,3 +83,16 @@
 
 - belongs_to :user
 - belongs_to :articles
+
+## schedules テーブル
+
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| title      | string     | null: false                    |
+| content    | text       |                                |
+| start_time | boolean    |                                |
+| user       | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user

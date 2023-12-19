@@ -4,7 +4,6 @@ class SchedulesController < ApplicationController
   before_action :set_schedules
 
   def index
-    @schedule = current_user.schedules.includes(:user)
   end
   
   def new
