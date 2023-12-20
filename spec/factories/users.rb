@@ -4,7 +4,7 @@ FactoryBot.define do
     unique_user_id        {'000001'}
     password              {'1a' + Faker::Internet.password(min_length: 6)}
     password_confirmation {password}
-    department_id         {'1'}
+    department_id         {'2'}
     position_id           {'2'}
   end
 end
