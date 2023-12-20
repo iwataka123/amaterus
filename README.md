@@ -164,15 +164,15 @@ https://amaterus.onrender.com
 
 ## checks テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| news   | references | null: false, foreign_key: true |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false, foreign_key: true |
+| article | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :articles
+- belongs_to :article
 
 ## schedules テーブル
 
@@ -181,7 +181,7 @@ https://amaterus.onrender.com
 | title      | string     | null: false                    |
 | content    | text       |                                |
 | start_time | datetime   | null: false                    |
-| completed  | boolean    | null: false, default: false    |
+| completed  | boolean    | default: false                 |
 | user       | references | null: false, foreign_key: true |
 
 ### Association
